@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function Example() {
 
   const [count, setCount] = useState(0);
 
+  useEffect(() => {
+    // Actualiza el título del documento usando la Browser API
+    document.title = `You clicked ${count} times`;
+  });
+  
   return (
     <div>
       <p>You clicked {count} times</p>

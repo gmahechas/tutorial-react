@@ -4,12 +4,14 @@ import './index.css';
 /* import App from './App'; */
 import * as serviceWorker from './serviceWorker';
 
-import Example from './Example/Example';
+/* import Example from './Example/Example'; */
+import FriendStatus from './FriendStatus/FriendStatus';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Example />
+    {/* <Example /> */}
+    <FriendStatus />
   </React.StrictMode>,
   document.getElementById('root')
 );

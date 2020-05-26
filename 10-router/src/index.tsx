@@ -4,18 +4,20 @@ import './index.css';
 /* import App from './App'; */
 import * as serviceWorker from './serviceWorker';
 
-/* import Basic from './BasicRouting/Basic'; */
+import Basic from './BasicRouting/Basic';
 /* import Nested from './NestedRouting/Nested'; */
 /* import Lazy from './Lazy/Lazy'; */
-import UrlParameters from './UrlParameters/UrlParameters';
+/* import UrlParameters from './UrlParameters/UrlParameters'; */
+/* import AppRouter from './AppRouter/AppRouter'; */
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    {/* <Basic /> */}
+    <Basic />
     {/* <Nested /> */}
     {/* <Lazy /> */}
-    <UrlParameters />
+    {/* <UrlParameters /> */}
+    {/* <AppRouter /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

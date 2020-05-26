@@ -29,9 +29,7 @@ export default function Lazy() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
+          <Route path="/users" component={Users} />
           <Route path="/">
             <Home />
           </Route>

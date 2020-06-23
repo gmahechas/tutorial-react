@@ -1,0 +1,2 @@
+mongodb+srv://gmahechas:<password>@cluster-tutorialmern-0zwbf.mongodb.net/test?retryWrites=true&w=majority
+

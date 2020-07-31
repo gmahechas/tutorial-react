@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
+import { reducer } from 'redux-form';
 
 import reducers from './reducers';
 
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducers)
+const store = createStore(combineReducers({
+  counter: reducers,
+  forms: reducer
+}));
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

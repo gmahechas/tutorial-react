@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import { connect } from 'react-redux';
+
+import { increment, deincrement, reset } from './reducers';
 import './App.css';
 
-function App() {
+function App(props: any) {
+  const [value, setValue] = useState(props.state);
+  const { state, increment, deincrement, reset } = props;
+
+  const handleChange = (e: any) => {
+    const value = e.target.value;
+    setValue(Number(value));
+  }
+
+  const handleReset = () => {
+    reset(value);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>{state}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={deincrement}>Decrement</button>
+      <input type="text" onChange={(e) => handleChange(e)} />
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+  return {
+    state
+  }
+}
+
+const mapDispatchToProps = (dispatch: any) => ({
+  increment: () => dispatch(increment()),
+  deincrement: () => dispatch(deincrement()),
+  reset: (payload: number) => dispatch(reset(payload))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

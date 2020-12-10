@@ -15,7 +15,7 @@ const CounterApp = () => {
   return (
     <FragmentShared>
       <Counter counter={counter} />
-      <InputShared value={factor} onChange={changeFactor} />
+      <InputShared name="factor" value={factor} onChange={changeFactor} />
       <ButtonShared onClick={increment}>Increment</ButtonShared>
       <ButtonShared onClick={decrement}>Decrement</ButtonShared>
       <ButtonShared onClick={reset}>Reset</ButtonShared>

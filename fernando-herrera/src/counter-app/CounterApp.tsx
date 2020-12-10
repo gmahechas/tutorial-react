@@ -2,27 +2,24 @@ import React from 'react';
 
 import FragmentShared from './hoc/FragmentShared';
 import Counter from './components/Counter';
+
 import InputShared from './hoc/InputShared';
 import ButtonShared from './hoc/ButtonShared';
-import UseStateHook from './hooks/UseStateHook';
+
+import CounterHook from './hooks/CounterHook';
+import InputHook from './hooks/InputHook';
 
 const CounterApp = () => {
-  const [counter, setCounter] = UseStateHook<number>(1);
-  const [numberRef, setNumberRef] = UseStateHook<number>(3);
-
-  const increment = () => setCounter(counter + numberRef);
-  const decrement = () => setCounter(counter - numberRef);
-  const changeNumber = (e: React.ChangeEvent<HTMLInputElement>) =>
-    e.target.value
-      ? setNumberRef(parseInt(e.target.value))
-      : setNumberRef(0);
+  const { state: factor, changeFactor } = InputHook();
+  const { state: counter, increment, decrement, reset } = CounterHook(factor);
 
   return (
     <FragmentShared>
       <Counter counter={counter} />
-      <InputShared value={numberRef} onChange={changeNumber} />
+      <InputShared value={factor} onChange={changeFactor} />
       <ButtonShared onClick={increment}>Increment</ButtonShared>
       <ButtonShared onClick={decrement}>Decrement</ButtonShared>
+      <ButtonShared onClick={reset}>Reset</ButtonShared>
     </FragmentShared>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import FragmentShared from '../hoc/FragmentShared';
-import InputShared from '../hoc/InputShared';
-import UseStateHook from '../hooks/UseStateHook';
+import FragmentShared from '../../hoc/FragmentShared';
+import InputShared from '../../hoc/InputShared';
+import UseStateHook from '../../hooks/UseStateHook';
 import Message from './Message';
 
 const SimpleForm = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import InputShared from '../hoc/InputShared';
-import UseFormHook from '../hooks/UseFormHook';
+import InputShared from '../../hoc/InputShared';
+import UseFormHook from '../../hooks/UseFormHook';
 
 interface IForm {
   name: string;

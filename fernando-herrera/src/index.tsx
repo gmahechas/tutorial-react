@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-/* import CounterApp from './counter-app/CounterApp'; */
-/* import SimpleForm from './simple-form/SimpleForm'; */
-import SimpleForm2 from './simple-form/SimpleForm2';
+/* import CounterApp from './apps/counter-app/CounterApp'; */
+/* import SimpleForm from './apps/simple-form/SimpleForm'; */
+/* import SimpleForm2 from './apps/simple-form/SimpleForm2'; */
+import FocusScreen from './apps/useRefApp/FocusScreen';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SimpleForm2 />
+    <FocusScreen />
   </React.StrictMode>,
   document.getElementById('root')
 );

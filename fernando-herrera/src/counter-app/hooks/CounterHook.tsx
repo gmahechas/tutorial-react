@@ -1,4 +1,4 @@
-import UseStateHook from './UseStateHook';
+import UseStateHook from '../../hooks/UseStateHook';
 
 const CounterHook = (factor: number = 1) => {
   const [state, setState] = UseStateHook<number>(1);

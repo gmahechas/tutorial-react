@@ -1,11 +1,10 @@
 import React from 'react';
 
-import FragmentShared from './hoc/FragmentShared';
+import FragmentShared from '../hoc/FragmentShared';
+import InputShared from '../hoc/InputShared';
+import ButtonShared from '../hoc/ButtonShared';
+
 import Counter from './components/Counter';
-
-import InputShared from './hoc/InputShared';
-import ButtonShared from './hoc/ButtonShared';
-
 import CounterHook from './hooks/CounterHook';
 import InputHook from './hooks/InputHook';
 

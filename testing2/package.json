@@ -1,5 +1,5 @@
 {
-  "name": "testing",
+  "name": "testing2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,15 +10,9 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
-    "axios": "^0.21.1",
-    "enzyme": "^3.11.0",
-    "moxios": "^0.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-redux": "^7.2.2",
     "react-scripts": "4.0.1",
-    "redux": "^4.0.5",
-    "redux-promise": "^0.6.0",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
@@ -45,13 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/enzyme": "^3.10.8",
-    "@types/moxios": "^0.4.9",
-    "@types/react-redux": "^7.1.14",
-    "@types/redux-promise": "^0.5.29",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1"
   }
 }

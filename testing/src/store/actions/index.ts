@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Comment } from '../../models/comment';
-import { CommentActionTypes, SAVE_COMMENT, FETCH_COMMENTS } from './types';
+import { CommentActionTypes, SAVE_COMMENT, FETCH_COMMENTS, CHANGE_AUTH } from './types';
 
 export const saveComment = (comment: Comment): CommentActionTypes => {
   return {
@@ -14,5 +14,12 @@ export const fetchComments = (): CommentActionTypes => {
   return {
     type: FETCH_COMMENTS,
     payload: response
+  }
+}
+
+export const changeAuth = (isLoggedIn: boolean): CommentActionTypes => {
+  return {
+    type: CHANGE_AUTH,
+    payload: isLoggedIn
   }
 }

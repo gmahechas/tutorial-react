@@ -10,6 +10,9 @@ beforeEach(() => {
     myComments: {
       comments: [{ value: 'comment 1' }, { value: 'comment 2' }],
     },
+    auth: {
+      isAuth: true
+    },
   };
   wrapped = mount(
     <StoreHoc initialState={initialState}>

@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 
 import { PropsFromRedux, connector } from '../store/reducers/comments';
+import requiredAuth from './requiredAu';
 
 interface IProps extends PropsFromRedux {}
 const CommentBox: FC<IProps> = ({ comments, saveComment, fetchComments }) => {
@@ -24,9 +25,11 @@ const CommentBox: FC<IProps> = ({ comments, saveComment, fetchComments }) => {
           <button>Submit Comment</button>
         </div>
       </form>
-      <button className="fetch-comments" onClick={fetchComments}>Fetch Comments</button>
+      <button className='fetch-comments' onClick={fetchComments}>
+        Fetch Comments
+      </button>
     </div>
   );
 };
 
-export default connector(CommentBox);
+export default connector(requiredAuth(CommentBox));

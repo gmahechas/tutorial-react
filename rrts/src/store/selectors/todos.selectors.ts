@@ -1,3 +1,4 @@
+import { useSelector, TypedUseSelectorHook } from 'react-redux';
 import { RootState } from '../reducers';
 
-export const todos = ({ todos }: RootState) => ({ todos: todos.todos });
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;

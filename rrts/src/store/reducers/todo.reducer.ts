@@ -1,10 +1,9 @@
 import { connect, ConnectedProps } from 'react-redux';
+
 import { RootState } from '.';
-import * as fromEffects from '../effects/thunk';
-
+import * as fromEffects from '../effects/todo.effects';
 import { useSelector, TypedUseSelectorHook } from 'react-redux'
-
-import { ActionTypes, EnumActionTypes } from '../actions/thumk';
+import { TodoActionTypes, TodoTypes } from '../actions/todo.actions';
 import { ITodo } from '../../models/todo.model';
 
 export interface State {
@@ -17,13 +16,13 @@ const initialState: State = {
   error: ''
 }
 
-export const reducer = (state = initialState, action: ActionTypes): State => {
+export const reducer = (state = initialState, action: TodoActionTypes): State => {
   switch (action.type) {
-    case EnumActionTypes.FETCH_TODOS_SUCCESS:
+    case TodoTypes.FETCH_TODOS_SUCCESS:
       return { ...state, todos: [...state.todos, ...action.payload] }
-    case EnumActionTypes.FETCH_TODOS_FAILED:
+    case TodoTypes.FETCH_TODOS_FAILED:
       return { ...state, error: action.payload }
-    case EnumActionTypes.DELETE_TODO:
+    case TodoTypes.DELETE_TODO:
       return { ...state, todos: state.todos.filter(todo => todo.id !== action.payload) };
     default:
       return state;

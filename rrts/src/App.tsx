@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { connect } from 'react-redux';
-import * as fromEffects from './store/effects/thunk';
+import * as fromEffects from './store/effects';
 import { ITodo } from './models/todo.model';
 import { RootState } from './store/reducers';
 

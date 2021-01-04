@@ -12,6 +12,7 @@ interface IProps {
 }
 
 const _App: FC<IProps> = ({ todos, fetchTodos, deleteTodo }) => {
+
   const onClickFetch = () => {
     fetchTodos();
   };

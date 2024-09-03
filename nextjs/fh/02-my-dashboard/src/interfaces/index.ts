@@ -1,2 +1,2 @@
 export * from './pokemons-response';
-export * from './simple-pokemos';
+export * from './simple-pokemon';

@@ -17,7 +17,7 @@ export async function createSnippet(formState: { message: string }, formData: Fo
             return { message: "Code must be at least 10 characters long" };
         }
 
-        const result = await db.snippet.create({
+        await db.snippet.create({
             data: {
                 title,
                 code,
@@ -33,7 +33,7 @@ export async function createSnippet(formState: { message: string }, formData: Fo
 }
 
 export async function editSnippet(snippet: Snippet) {
-    const result = await db.snippet.update({
+    await db.snippet.update({
         where: { id: snippet.id },
         data: snippet,
     });
@@ -42,7 +42,7 @@ export async function editSnippet(snippet: Snippet) {
 
 
 export async function deleteSnippet(id: number) {
-    const result = await db.snippet.delete({
+    await db.snippet.delete({
         where: { id },
     });
     redirect(`/`);

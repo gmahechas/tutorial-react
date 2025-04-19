@@ -2,6 +2,7 @@ import db from "@/db";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { deleteSnippet } from "@/actions/snippets.actions";
+
 export default async function SnippetShowPage(props: {
     params: Promise<{ id: string }>
 }) {
@@ -31,4 +32,12 @@ export default async function SnippetShowPage(props: {
             <pre className="p-3 border rounded bg-gray-200 border-gray-200"><code>{`${snippet.code}`}</code></pre>
         </div>
     )
+}
+
+
+export async function generateStaticParams() {
+    const snippets = await db.snippet.findMany();
+    return snippets.map((snippet) => ({
+        id: snippet.id.toString(),
+    }));
 }

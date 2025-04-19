@@ -1,6 +1,7 @@
 'use server';
 
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { Snippet } from "@/generated/prisma";
 import db from "@/db";
 
@@ -29,6 +30,7 @@ export async function createSnippet(formState: { message: string }, formData: Fo
         }
         return { message: "Something went wrong" };
     }
+    revalidatePath('/');
     redirect(`/`);
 }
 
@@ -37,6 +39,7 @@ export async function editSnippet(snippet: Snippet) {
         where: { id: snippet.id },
         data: snippet,
     });
+    revalidatePath(`/snippets/${snippet.id}`);
     redirect(`/snippets/${snippet.id}`);
 }
 
@@ -45,5 +48,6 @@ export async function deleteSnippet(id: number) {
     await db.snippet.delete({
         where: { id },
     });
+    revalidatePath('/');
     redirect(`/`);
 }

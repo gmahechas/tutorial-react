@@ -1,12 +1,7 @@
-import Hero from '@/components/hero';
-import scaleImg from 'public/scale.jpg';
+import Hero from "@/components/hero";
+import scaleImg from '@/public/images/scale.jpg'
 
 export default function ScalePage() {
-	return (
-    <Hero
-      imgData={scaleImg}
-      imgAlt='car factory'
-      title='Scale Cloud Hosting'
-    />
-	)
+    return <Hero imgData={scaleImg} imgAlt="scale" title="Scale" />;
 }
+

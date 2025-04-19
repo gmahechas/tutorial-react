@@ -1,12 +1,8 @@
-import Hero from '@/components/hero';
-import reliabilityImg from 'public/reliability.jpg';
+import Hero from "@/components/hero";
+import reliabilityImg from '@/public/images/reliability.jpg'
 
 export default function ReliabilityPage() {
-	return (
-    <Hero
-      imgData={reliabilityImg}
-      imgAlt='car factory'
-      title='Reliability Cloud Hosting'
-    />
-	)
+    return (
+        <Hero imgData={reliabilityImg} imgAlt="reliability" title="Reliability" />
+    )
 }

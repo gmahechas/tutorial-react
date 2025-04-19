@@ -1,12 +1,8 @@
-import Hero from '@/components/hero';
-import homeImg from 'public/home.jpg';
+import homeImg from '@/public/images/home.jpg'
+import Hero from '@/components/hero'
 
-export default function HomePage() {
+export default function AppPage() {
   return (
-    <Hero
-      imgData={homeImg}
-      imgAlt='car factory'
-      title='Professional Cloud Hosting'
-    />
+    <Hero imgData={homeImg} imgAlt="home" title="Home" />
   );
 }

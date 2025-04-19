@@ -1,24 +1,20 @@
-import { notFound } from 'next/navigation';
-import { PageProps } from '@/utils/util.interface';
-import { db } from '@/db';
-import React from 'react';
-import SnippetEditForm from '@/components/snippet-edit-form';
+import { notFound } from "next/navigation";
+import db from "@/db";
+import SnippetEditForm from "@/components/snippet-edit-form";
 
-interface Props {
-  id: string;
-}
+export default async function SnippetEditPage(props: {
+    params: Promise<{ id: string }>
+}) {
+    const { id } = await props.params;
+    const snippet = await db.snippet.findUnique({
+        where: {
+            id: parseInt(id),
+        },
+    });
 
-export default async function SnippetEditPage(props: PageProps<Props>) {
-  const id = parseInt(props.params.id);
-  const snippet = await db.snippet.findFirst({ where: { id } });
+    if (!snippet) {
+        notFound();
+    }
 
-  if (!snippet) {
-    return notFound();
-  }
-
-  return (
-    <div>
-      <SnippetEditForm snippet={snippet} />
-    </div>
-  );
+    return <SnippetEditForm snippet={snippet} />
 }

@@ -6,7 +6,6 @@ import { deleteSnippet } from "@/actions/snippets.actions";
 export default async function SnippetShowPage(props: {
     params: Promise<{ id: string }>
 }) {
-    await new Promise(resolve => setTimeout(resolve, 1000));
     const { id } = await props.params;
     const snippet = await db.snippet.findUnique({
         where: {
